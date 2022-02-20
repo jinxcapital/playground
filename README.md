@@ -58,3 +58,10 @@ yarn w3:ens-to-address --ens=maniac.eth
 # read balance of 0x2eB5e5713A874786af6Da95f6E4DEaCEdb5dC246
 yarn w3:read-balance --address=0x2eB5e5713A874786af6Da95f6E4DEaCEdb5dC246
 ```
+
+### read-contract
+
+```bash
+# cryptopunks
+yarn w3:read-contract:cryptopunks
+```
