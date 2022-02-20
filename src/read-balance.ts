@@ -17,7 +17,14 @@ if (!ADDRESS) {
   const w3 = new W3(process.env.W3_PROVIDER as string);
 
   try {
-    const result = await w3.eth.getBalance(ADDRESS);
+    let address = ADDRESS;
+
+    // resolve address if ENS domain name pas provided
+    if (address.includes('.eth')) {
+      address = await w3.eth.ens.getAddress(ADDRESS);
+    }
+
+    const result = await w3.eth.getBalance(address);
     console.log(W3.utils.fromWei(result, 'ether') + ' ETH');
   } catch (e) {
     console.error(e);
