@@ -62,12 +62,6 @@ yarn w3:read-balance --address=0x2eB5e5713A874786af6Da95f6E4DEaCEdb5dC246
 ### read-contract
 
 ```bash
-# cryptopunks
-yarn w3:read-contract:cryptopunks
-
-# azuki
-yarn w3:read-contract:azuki
-
-# edenhorde
-yarn w3:read-contract:edenhorde
+# bored ape yacht club
+yarn w3:read-contract --address=0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d
 ```
