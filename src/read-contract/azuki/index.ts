@@ -10,24 +10,46 @@ const CONTRACT_ADDRESS = '0xed5af388653567af2f388e6224dc7c4b3241c544';
   const w3 = new W3(process.env.W3_PROVIDER as string);
   const contract = new w3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
 
+  let name = null;
   try {
-    const properties = {
-      name: await contract.methods.name().call(),
-      symbol: await contract.methods.symbol().call(),
-      totalSupply: await contract.methods.totalSupply().call(),
-    };
+    name = await contract.methods.name().call();
+  } catch {}
+  let symbol = null;
+  try {
+    symbol = await contract.methods.symbol().call();
+  } catch {}
+  let totalSupply = null;
+  try {
+    totalSupply = await contract.methods.totalSupply().call();
+  } catch {}
+  let baseURI = null;
+  try {
+    baseURI = await contract.methods.baseURI().call();
+  } catch {}
 
-    console.log(properties);
+  const properties = {
+    name,
+    symbol,
+    totalSupply,
+    baseURI,
+  };
 
-    await new Promise((r) => setTimeout(r, 3000));
+  console.log(properties);
 
-    for (let i = 1; i <= 5; i++) {
+  await new Promise((r) => setTimeout(r, 3000));
+
+  const sample: Record<string, unknown> = {};
+  for (let i = 1; i <= 5; i++) {
+    try {
       const uri = await contract.methods.tokenURI(i).call();
-      console.log(`tokenURI(${i}): ${uri}`);
-      const response = await fetch(uri);
-      console.log(await response.json());
+      sample[`tokenURI(${i})`] = uri;
+    } catch {
+      sample[`tokenURI(${i})`] = null;
     }
-  } catch (e) {
-    console.error(e);
+
+    // const response = await fetch(uri);
+    // console.log(await response.json());
   }
+
+  console.log(sample);
 })();

@@ -10,11 +10,28 @@ const CONTRACT_ADDRESS = '0x9eeaecbe2884aa7e82f450e3fc174f30fc2a8de3';
   const w3 = new W3(process.env.W3_PROVIDER as string);
   const contract = new w3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
 
+  let name = null;
+  try {
+    name = await contract.methods.name().call();
+  } catch {}
+  let symbol = null;
+  try {
+    symbol = await contract.methods.symbol().call();
+  } catch {}
+  let totalSupply = null;
+  try {
+    totalSupply = await contract.methods.totalSupply().call();
+  } catch {}
+  let baseURI = null;
+  try {
+    baseURI = await contract.methods.baseURI().call();
+  } catch {}
+
   const properties = {
-    name: await contract.methods.name().call(),
-    symbol: await contract.methods.symbol().call(),
-    totalSupply: await contract.methods.totalSupply().call(),
-    baseURI: await contract.methods.baseURI().call(),
+    name,
+    symbol,
+    totalSupply,
+    baseURI,
   };
 
   console.log(properties);
