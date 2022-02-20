@@ -5,6 +5,7 @@
     "dev": "ts-node -r ./src/bootstrap.ts ./src"
   },
   "devDependencies": {
+    "@types/yargs": "^17.0.8",
     "dotenv": "^16.0.0",
     "ts-node": "^10.5.0",
     "tsconfig-paths": "^3.12.0",
