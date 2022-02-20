@@ -7,7 +7,8 @@
     "w3:read-balance": "ts-node -r ./src/bootstrap.ts ./src/read-balance",
     "w3:ens-to-address": "ts-node -r ./src/bootstrap.ts ./src/ens-to-address",
     "w3:read-contract:cryptopunks": "ts-node -r ./src/bootstrap.ts ./src/read-contract/cryptopunks",
-    "w3:read-contract:azuki": "ts-node -r ./src/bootstrap.ts ./src/read-contract/azuki"
+    "w3:read-contract:azuki": "ts-node -r ./src/bootstrap.ts ./src/read-contract/azuki",
+    "w3:read-contract:edenhorde": "ts-node -r ./src/bootstrap.ts ./src/read-contract/edenhorde"
   },
   "devDependencies": {
     "@types/node": "^17.0.18",

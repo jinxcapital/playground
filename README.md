@@ -67,4 +67,7 @@ yarn w3:read-contract:cryptopunks
 
 # azuki
 yarn w3:read-contract:azuki
+
+# edenhorde
+yarn w3:read-contract:edenhorde
 ```
