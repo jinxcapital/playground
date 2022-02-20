@@ -64,4 +64,7 @@ yarn w3:read-balance --address=0x2eB5e5713A874786af6Da95f6E4DEaCEdb5dC246
 ```bash
 # cryptopunks
 yarn w3:read-contract:cryptopunks
+
+# azuki
+yarn w3:read-contract:azuki
 ```
