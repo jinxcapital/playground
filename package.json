@@ -1,6 +1,9 @@
 {
   "name": "nft-metadata",
   "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node -r ./src/bootstrap.ts ./src"
+  },
   "devDependencies": {
     "dotenv": "^16.0.0",
     "ts-node": "^10.5.0",
