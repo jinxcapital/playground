@@ -1,11 +1,11 @@
 import W3 from 'web3';
-import yargs from 'yargs/yargs';
 import { hideBin } from 'yargs/helpers';
+import yargs from 'yargs/yargs';
 
 const { argv } = yargs(hideBin(process.argv)).option('address', {
   description: 'Ethereum address',
   string: true,
-}) as any as { argv: { address: string } };
+}) as { argv: { address: string } };
 
 const ADDRESS = argv.address;
 if (!ADDRESS) {
@@ -22,4 +22,4 @@ if (!ADDRESS) {
   } catch (e) {
     console.error(e);
   }
-})()
+})();

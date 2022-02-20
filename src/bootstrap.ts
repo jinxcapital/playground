@@ -6,9 +6,6 @@ dotenv.config();
 tsConfigPaths.register({
   baseUrl: './',
   paths: {
-    '*': [
-      './src/*',
-      './*',
-    ],
+    '*': ['./src/*', './*'],
   },
 });
