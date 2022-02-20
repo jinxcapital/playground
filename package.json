@@ -4,7 +4,8 @@
   "scripts": {
     "lint": "eslint --ext '.ts,.js' src && tsc --noEmit",
     "lint:fix": "eslint --ext '.ts,.js' --fix src",
-    "w3:read-balance": "ts-node -r ./src/bootstrap.ts ./src/read-balance"
+    "w3:read-balance": "ts-node -r ./src/bootstrap.ts ./src/read-balance",
+    "w3:ens-to-address": "ts-node -r ./src/bootstrap.ts ./src/ens-to-address"
   },
   "devDependencies": {
     "@types/node": "^17.0.18",
